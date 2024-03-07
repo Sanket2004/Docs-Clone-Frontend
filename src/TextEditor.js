@@ -22,7 +22,7 @@ export default function TextEditor() {
 
     const { id: documentId } = useParams()
 
-    const quillRef = useRef(null)
+    // const quillRef = useRef(null)
 
     const [socket, setSocket] = useState()
     const [quill, setQuill] = useState()
