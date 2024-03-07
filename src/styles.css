@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+
+.container .ql-editor {
+    width: 8.5in;
+    min-height: 11in;
+    padding: 1in;
+    margin: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    background-color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container .ql-editor {
+        padding: 35px;
+    }
+}
+
+
+.container .ql-container.ql-snow {
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.container .ql-toolbar.ql-snow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f3f3f3;
+    border: none;
+}
+
+.hide-on-print {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    background-color: rgb(196, 195, 195);
+    color: rgb(76, 76, 76);
+    border-radius: 50%;
+}
+
+
+@page {
+    margin: 1in;
+}
+
+
+@media print {
+    body {
+        background: none;
+    }
+
+    .container .ql-editor {
+        width: 6.5in;
+        height: 9in;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        align-self: flex-start;
+    }
+
+    .container .ql-toolbar.ql-snow {
+        display: none;
+    }
+
+    /* Add a class to your button and hide it on print */
+    .hide-on-print {
+        display: none;
+    }
+}
