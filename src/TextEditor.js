@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Quill from 'quill';
 import "quill/dist/quill.snow.css";
 import { io } from "socket.io-client";
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SAVE_INTERVAL_MS = 2000; // Save every 2 seconds
@@ -23,8 +23,8 @@ export default function TextEditor() {
     const { id: documentId, title: filename } = useParams();
     const [socket, setSocket] = useState();
     const [quill, setQuill] = useState();
-    const [username, setUsername] = useState('');
-    const [documents, setDocuments] = useState([]);
+    // const [username, setUsername] = useState('');
+    // const [documents, setDocuments] = useState([]);
 
 
     useEffect(() => {
@@ -50,8 +50,8 @@ export default function TextEditor() {
             quill.enable();
         });
 
-        socket.emit('get-document', documentId, username, filename);
-    }, [socket, quill, documentId, username, filename]);
+        socket.emit('get-document', documentId, filename);
+    }, [socket, quill, documentId, filename]);
 
     useEffect(() => {
         if (!socket || !quill) return;

@@ -1,6 +1,5 @@
 import TextEditor from "./TextEditor";
-import { BrowserRouter, Routes, Navigate, Route } from 'react-router-dom';
-import { v4 as uuidV4 } from 'uuid'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PrintButton from "./Print";
 import HomePage from "./components/HomePage";
 import Error from "./components/Error";
