@@ -47,8 +47,8 @@ function HomePage() {
         <>
             <Toaster position='top-center' />
             {!username ? (
-                <section className="bg-white min-h-screen flex justify-center items-center fixed top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="min-h-screen gap-16 items-center py-24 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
+                <section className="bg-white min-h-screen flex justify-center items-center">
+                    <div className="min-h-screen gap-16 place-content-center py-10 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
                         <div className="font-light text-gray-500 sm:text-lg">
                             <h2 className="mb-4 text-4xl font-black text-black">Doc Sync</h2>
                             <p className="mb-4 text-black font-[700] text-[#ffd42f] text-gray-500 text-l sm:text-xl">Collaborative Document Editing Platform.</p>
@@ -72,9 +72,9 @@ function HomePage() {
                 <>
                     <Navbar />
                     <section className="bg-white min-h-screen">
-                        <div className="min-h-screen gap-16 items-center py-24 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
+                        <div className="min-h-screen gap-16 items-center pt-24 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
                             <div className="font-light text-gray-500 sm:text-lg">
-                                <h2 className="mb-4 text-2xl font-black text-black md:text-3xl lg:text-4xl">Doc Sync</h2>
+                                <h2 className="mb-4 font-black text-black text-4xl">Doc<span className='text-yellow-500'>Sync</span></h2>
                                 <p className="mb-4 text-black font-[700] text-[#ffd42f] text-gray-500 text-l sm:text-xl">Collaborative Document Editing Platform.</p>
                                 <p className="mb-4 ">
                                     DocSync is a powerful collaborative document editing platform designed to streamline teamwork and enhance productivity. With DocSync, multiple users can work on the same document simultaneously, ensuring real-time updates and seamless collaboration.
