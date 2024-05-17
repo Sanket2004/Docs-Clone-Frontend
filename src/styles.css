@@ -11,9 +11,9 @@ html {
     font-feature-settings: 'cv11';
 }
 
-body {
+/* body {
     background-color: #f3f3f3;
-}
+} */
 
 
 .container .ql-editor {
@@ -46,8 +46,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
+    background-color: white;
     border: none;
+    margin-top: 10px;
 }
 
 .hide-on-print {
@@ -56,10 +58,10 @@ body {
     right: 25px;
     border: none;
     outline: none;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     padding: 12px;
-    background-color: rgb(196, 195, 195);
+    background-color: black;
     color: rgb(76, 76, 76);
     border-radius: 50%;
 }
@@ -67,6 +69,13 @@ body {
 
 @page {
     margin: 1in;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
 }
 
 
@@ -79,6 +88,7 @@ body {
         width: 6.5in;
         height: 9in;
         padding: 0;
+        padding-block: 4rem;
         margin: 0;
         box-shadow: none;
         align-self: flex-start;
@@ -90,6 +100,10 @@ body {
 
     /* Add a class to your button and hide it on print */
     .hide-on-print {
+        display: none;
+    }
+
+    .header {
         display: none;
     }
 }
