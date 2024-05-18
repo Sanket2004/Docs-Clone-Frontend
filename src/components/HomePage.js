@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 function HomePage() {
     const [username, setUsername] = useState('');
     const [documents, setDocuments] = useState([]);
+    const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
@@ -22,6 +23,7 @@ function HomePage() {
     }, []);
 
     const fetchDocuments = async () => {
+        setLoading(true);
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/documents`);
             if (!response.ok) {
@@ -29,9 +31,11 @@ function HomePage() {
             }
             const data = await response.json();
             setDocuments(data);
+            setLoading(false);
         } catch (error) {
             toast.error('Error fetching documents');
             console.error('Error fetching documents:', error);
+            setLoading(false);
         }
     };
 
@@ -50,8 +54,8 @@ function HomePage() {
                 <section className="bg-white min-h-screen flex justify-center items-center">
                     <div className="min-h-screen gap-16 place-content-center py-10 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
                         <div className="font-light text-gray-500 sm:text-lg">
-                            <h2 className="mb-4 text-4xl font-black text-black">Doc Sync</h2>
-                            <p className="mb-4 text-black font-[700] text-[#ffd42f] text-gray-500 text-l sm:text-xl">Collaborative Document Editing Platform.</p>
+                            <h2 className="mb-4 text-4xl text-black font-[900]">Doc<span className='text-yellow-500'>Sync</span></h2>
+                            <p className="mb-4 text-black text-black font-[600] text-l sm:text-xl">Collaborative Document Editing Platform.</p>
                             <form onSubmit={handleUsernameSubmit} className='w-full'>
                                 <input
                                     type="text"
@@ -72,10 +76,10 @@ function HomePage() {
                 <>
                     <Navbar />
                     <section className="bg-white min-h-screen">
-                        <div className="min-h-screen gap-16 items-center pt-24 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
+                        <div className="min-h-screen gap-16 items-center pt-32 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-8">
                             <div className="font-light text-gray-500 sm:text-lg">
-                                <h2 className="mb-4 font-black text-black text-4xl">Doc<span className='text-yellow-500'>Sync</span></h2>
-                                <p className="mb-4 text-black font-[700] text-[#ffd42f] text-gray-500 text-l sm:text-xl">Collaborative Document Editing Platform.</p>
+                                <h2 className="mb-4 font-[900] text-black text-3xl">Hello, <span className='text-yellow-500'>{username.split(' ')[0]}</span></h2>
+                                {/* <p className="mb-4 text-black font-[600] text-black text-l sm:text-xl">Collaborative Document Editing Platform.</p> */}
                                 <p className="mb-4 ">
                                     DocSync is a powerful collaborative document editing platform designed to streamline teamwork and enhance productivity. With DocSync, multiple users can work on the same document simultaneously, ensuring real-time updates and seamless collaboration.
                                 </p>
@@ -86,15 +90,20 @@ function HomePage() {
                         </div>
                         <div className="py-24 px-8 mx-auto max-w-screen-xl lg:py-8 lg:px-8">
                             <h3 className="text-xl font-bold mb-4">All Documents</h3>
-                            <ul>
-                                {documents.map((doc) => (
-                                    <li key={doc._id} className="mb-2">
-                                        <Link to={`/documents/${doc._id}/${doc.filename}`} className="text-yellow-500 hover:underline">
-                                            {doc.filename} (Created on {new Date(doc.createdAt).toLocaleString()})
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                            {
+                                loading ?
+                                    <p>Loading documents..</p>
+                                :
+                                    <ul>
+                                        {documents.map((doc) => (
+                                            <li key={doc._id} className="mb-2">
+                                                <Link to={`/documents/${doc._id}/${doc.filename}`} className="text-yellow-500 hover:underline">
+                                                    {doc.filename} (Created on {new Date(doc.createdAt).toLocaleString()})
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                            }
                         </div>
                     </section>
                 </>
