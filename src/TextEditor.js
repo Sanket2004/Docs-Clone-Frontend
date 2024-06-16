@@ -163,14 +163,14 @@ const TextEditor = () => {
     <>
       <Toaster position="top-center" />
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="header">
+        <div className="header flex items-start justify-between">
           <div className="flex flex-col items-start">
             <Link to={"/"}>
               <h1 className="font-black text-xl lg:text-2xl">
-                Doc<span className="text-yellow-500">Sync</span>
+                Doc<span className="text-yellow-400 hover:text-yellow-500 transition-all">Sync</span>
               </h1>
             </Link>
-            <h1 className="mt-1 text-md lg:text-normal border-b-4 border-yellow-200 py-0.5">
+            <h1 className=" text-md lg:text-normal border-b-4 border-yellow-200 py-0.5">
               {filename}
             </h1>
           </div>
