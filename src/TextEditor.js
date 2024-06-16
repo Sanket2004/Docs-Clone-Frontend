@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import { FiShare2, FiUser } from "react-icons/fi";
+import { FiShare2 } from "react-icons/fi";
 import PrintButton from "./Print";
 
 const SAVE_INTERVAL_MS = 2000; // Save every 2 seconds
@@ -31,7 +31,7 @@ const TextEditor = () => {
   const [socket, setSocket] = useState();
   const [quill, setQuill] = useState();
   const [filename, setFilename] = useState("");
-  const [createdBy, setCreatedBy] = useState("");
+  // const [createdBy, setCreatedBy] = useState("");
   const [userCount, setUserCount] = useState(0); // Add state for user count
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ const TextEditor = () => {
           `${process.env.REACT_APP_SERVER_URL}/document/${documentId}`
         );
         setFilename(response.data.filename);
-        setCreatedBy(response.data.createdBy);
+        // setCreatedBy(response.data.createdBy);
       } catch (error) {
         toast.error("File Not Found !");
         navigate("/");
