@@ -7,7 +7,7 @@ const PrintButton = () => {
   };
 
   return (
-    <button onClick={handlePrint} className="hide-on-print flex items-center justify-center bg-green-100 border-2 border-green-300 rounded-lg cursor-pointer h-8 w-8" >
+    <button onClick={handlePrint} className="hide-on-print cursor-pointer h-10 w-10 flex items-center justify-center" >
       <FiDownload />
     </button>
   );

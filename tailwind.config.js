@@ -12,7 +12,7 @@ module.exports = {
         sans: ['DM Sans, sans-serif',
           {
             ...defaultTheme.fontFamily.sans,
-            fontFeatureSettings: '"cv11"',
+            fontFeatureSettings: '"tnum"',
             fontVariationSettings: "normal",
           }
         ],

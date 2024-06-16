@@ -141,8 +141,8 @@ function HomePage() {
               </div>
             </div>
             <div className="py-24 px-8 mx-auto max-w-screen-xl lg:py-8 lg:px-8">
-              <div className="flex justify-between">
-                <h3 className="w-max pb-2 border-yellow-400 text-xl font-black mb-4 border-b-4">
+              <div className="flex justify-between items-center">
+                <h3 className="w-max pb-2 border-yellow-400 text-neutral-500 text-xl font-black border-b-4">
                   All Documents
                 </h3>
                 <button
