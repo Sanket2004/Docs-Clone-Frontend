@@ -147,7 +147,7 @@ function HomePage() {
                 </h3>
                 <button
                   onClick={toggleSearch}
-                  className="mb-4 bg-transparent text-xl text-yellow-400 px-4 py-2 rounded-lg transition-all"
+                  className="bg-transparent text-xl text-yellow-400 rounded-lg transition-all"
                 >
                   {showSearch ? <FiX /> : <FiSearch />}
                 </button>
