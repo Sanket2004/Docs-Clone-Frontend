@@ -1,6 +1,6 @@
 {
   "short_name": "DocSync",
-  "name": "DocSync",
+  "name": "DocSync - Collaborative Document Editing Platform",
   "icons": [
     {
       "src": "favicon.svg",
@@ -9,17 +9,29 @@
     },
     {
       "src": "favicon.svg",
-      "type": "image/svg",
+      "type": "image/svg+xml",
       "sizes": "192x192"
     },
     {
       "src": "favicon.svg",
-      "type": "image/svg",
+      "type": "image/svg+xml",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#facc15",
+  "background_color": "#ffffff",
+  "description": "DocSync is a collaborative document editing platform. Edit documents together in real-time.",
+  "categories": ["productivity", "collaboration"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "related_applications": []
 }

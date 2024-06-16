@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var',
+        sans: ['system-ui',
           {
             ...defaultTheme.fontFamily.sans,
             fontFeatureSettings: '"cv11"',
