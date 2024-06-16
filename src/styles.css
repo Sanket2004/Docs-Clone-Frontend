@@ -111,6 +111,6 @@ html {
     }
 
     .header {
-        display: none;
+        display: none !important;
     }
 }
